@@ -1,35 +1,143 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
 
-{% set bodyId = "page-ideas" %}
-
-{% block title %}
-    <title>Ideias - Casa Criativa</title>
-{% endblock title %}
-
-
-    {% block content %}
-        <header>
-            <a href="/">
-                <img src="/imgs/logo.png" alt="Imagem do logotipo">
-            </a>
-            <nav>
-                <li><a href="/">Inicio</a></li>
-                <li><a class="button" href="#" onclick="onOff()">Nova Ideia</a></li>
-            </nav>
-        </header>
+    <head>
+        <meta charset="UTF-8">
+        <title>Casa Criativa</title>
         
-        <section id="title">
-            <p>em exibição</p>
-            <h1>Ideias</h1>
-        </section>
-    
-        <main>
-            <section id="ideas">
-                {% include "all_ideas.html" %}
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/public/style.css">
+
+    </head>
+
+    <body>
+        
+        <div id="conte">
+            <header class="page-ideas">
+                <a id="page-ideas" href="/index.html">
+                    <img src="/public/imgs/logo.png" alt="Imagem do logotipo">
+                </a>
+                <nav class="page-ideas">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a class="button" href="#modal" onclick="onOff()">Nova Ideia</a></li>
+                </nav>
+            </header>
+            
+            <section id="title">
+                <p>em exibição</p>
+                <h1>Ideias</h1>
             </section>
-        </main>
         
-        <footer>
-            Com ❤ <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a>
-        </footer>
-    {% endblock %}
+            <main>
+                <section id="ideas">
+                    <div class="idea">
+                        <img 
+                            src="https://www.flaticon.com/svg/static/icons/svg/2061/2061348.svg" 
+                            alt="Imagem de meditação">
+                            
+                        <div class="content">
+                            <h3>Meditação</h3>
+                            <p>Saúde</p>       
+                            <div class="description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt
+                            </div>
+                            <a href="" target="">Ir para a ideia</a>
+                        </div>   
+                    </div>    
+    
+                    <div class="idea">
+                        <img 
+                            src="https://www.flaticon.com/svg/static/icons/svg/2737/2737393.svg" 
+                            alt="Imagem de violão">
+                            
+                        <div class="content">
+                            <h3>Tocar violão</h3>
+                            <p>Lazer</p>       
+                            <div class="description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt
+                            </div>
+                            <a href="" target="">Ir para a ideia</a>
+                        </div>  
+                    </div>  
+                    
+                    <div class="idea">
+                        <img 
+                            src="https://www.flaticon.com/svg/static/icons/svg/1140/1140824.svg" 
+                            alt="imagem de Ginástica funcional">
+                            
+                        <div class="content">
+                            <h3>Ginástica funcional</h3>
+                            <p>Saúde</p>       
+                            <div class="description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt
+                            </div>
+                            <a href="" target="">Ir para a ideia</a>
+                        </div>  
+                    </div>   
+    
+                    <div class="idea">
+                        <img 
+                            src="https://www.flaticon.com/svg/static/icons/svg/1688/1688400.svg" 
+                            alt="Imagem de programação">
+                            
+                        <div class="content">
+                            <h3>Cursos de Programação</h3>
+                            <p>Estudo</p>       
+                            <div class="description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt
+                            </div>
+                            <a href="" target="">Ir para a ideia</a>
+                        </div>  
+                    </div>   
+                </section>
+            </main>
+            
+            <footer>
+                Com ❤ <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a>
+            </footer>
+        </div>
+        
+        <!--MODAL-->
+        <div id="modal" class="hide">
+            <div class="content">
+
+                <h1>Nova Ideia</h1>
+
+                <form action="/" method="POST" onsubmit="return checkFields(event)">
+                    
+                    <div class="input-wrapper">
+                        <label for="title">Título da Ideia</label>
+                        <input type="text" name="title" id="">
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <label for="category">Categoria</label>
+                        <input type="text" name="category" id="">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="image">Link da imagem</label>
+                        <input type="url" name="image" id="">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="description">Digite uma descrição para essa ideia</label>
+                        <textarea name="description" cols="30" rows="10"></textarea>
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <label for="link">Link da ideia</label>
+                        <input type="url" name="link">
+                    </div>
+
+                    <a href="#" onclick="onOff()">Voltar</a>
+                    <button>Salvar</button>
+
+                </form>
+            </div>
+        </div>
+
+        <script src="/public/scripts.js"></script>
+    </body>
+       
+</html>

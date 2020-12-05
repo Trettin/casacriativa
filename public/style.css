@@ -284,34 +284,38 @@ form button:hover {
 
 /*Ideias*/
 
-#page-ideas #container {
+#conte {
     display: block;
+    width: 90%;
+    max-width: 980px;
+
+    margin: 40px auto;
 }
-#page-ideas header {
+.page-ideas {
     display: flex;
     justify-content: space-between;
 }
 
-#page-ideas nav {
+.page-ideas nav {
     display: flex;
     align-items: center;
 }
 
-#page-ideas nav li {
+.page-ideas nav li {
     list-style: none;
 
     margin-right: 16px;
 }
 
-#page-ideas nav li a {
+.page-ideas nav li a {
     color: #25282b;
 }
 
-#page-ideas nav li a.button {
+.page-ideas nav li a.button {
     color: white;
 }
 
-#page-ideas nav li:last-child {
+.page-ideas nav li:last-child {
     margin-right: 0; 
 }
 
